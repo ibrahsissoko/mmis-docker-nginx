@@ -11,6 +11,7 @@ RUN addgroup -g 1000 node \
   && apk add --no-cache --virtual .build-deps \
   binutils-gold \
   curl \
+  git \
   g++ \
   gcc \
   gnupg \
@@ -68,6 +69,6 @@ RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar \
   && apk del .build-deps-yarn
 
 # Install nodejs module
-RUN npm install pm2 ts-node typescript -g
+RUN npm install pm2 ts-node typescript nodemon -g
 
 EXPOSE 80
