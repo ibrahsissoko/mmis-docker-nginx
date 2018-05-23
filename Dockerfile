@@ -10,7 +10,9 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/main | tee /etc/apk/repositor
   && echo @testing http://dl-cdn.alpinelinux.org/alpine/edge/testing | tee -a /etc/apk/repositories \
   && echo @community http://dl-cdn.alpinelinux.org/alpine/edge/community | tee -a /etc/apk/repositories \
   && apk add --update openssl \
-  && apk add --update nodejs nodejs-npm
+  && apk add --update nodejs \
+  && apk add --update nodejs-npm \
+  && apk add --update mysql-client
 
 RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar \
   && for key in \
