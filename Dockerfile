@@ -2,7 +2,7 @@ FROM nginx:stable-alpine
 
 LABEL maintainer="Satit Rianpit <rianpit@gmail.com>"
 
-ENV YARN_VERSION 1.5.1
+ENV YARN_VERSION 1.7.0
 
 RUN apk update && apk upgrade && apk add --no-cache git openssh
 
