@@ -12,7 +12,10 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/main | tee /etc/apk/repositor
   && apk add --update openssl \
   && apk add --update nodejs \
   && apk add --update nodejs-npm \
-  && apk add --update mysql-client
+  && apk add --update mysql-client \
+  && apk add tzdata \
+  && cp /usr/share/zoneinfo/Asia/Bangkok /etc/localtime \
+  && echo "Asia/Bangkok" > /etc/timezone
 
 RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar \
   && for key in \
